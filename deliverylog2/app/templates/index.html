@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Hi, {{ current_user.username }}!</h1>
+<h2>Here are some recent deliveries:</h2>
+{% for log in logs %}
+<div><p>{{ log.worker.username }} delivered: <b>{{ log.description }}</b> at {{log.delivertime}}</p></div>
+{% endfor %}
+{% endblock %}
